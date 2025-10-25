@@ -15,7 +15,7 @@ import Image12 from "../assets/12.png";
 import Prabhas from "../assets/Prabhas_SuperStar.mp4";
 import { GoMute, GoUnmute } from "react-icons/go";
 
-const Test = () => {
+const Salaar = () => {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
@@ -107,19 +107,28 @@ const Test = () => {
           </p>
         </div>
         <p className="max-w-5xl text-xl md:text-2xl font-['Italianno'] text-white leading-relaxed">
-          Devaratha "Deva" Raisar, known as Salaar, is a formidable and reserved
-          figure, the rightful heir of the Shouryaanga tribe of Khansaar, who
-          was exiled after the massacre of his people. <br />
+          What you see is a mechanic. A simple man. I fix things. Engines. Life.
+          Whatever needs it. I live with my mother, far from the noise, far from
+          the dust of forgotten places. And for a long time, that was enough.
           <br />
-          Despite his imposing stature and reputation as a weapon of
-          destruction, he lives a peaceful life until he is called back by his
-          childhood friend, Vardharaja Mannar. Deva's loyalty is unwavering, and
-          he uses his immense power to protect his friend, proving his
-          beast-like nature in battle. <br />
           <br />
-          His dual identity—the quiet family man and the vengeful heir—makes him
-          a complex and compelling protagonist driven by a past of betrayal and
-          a present defined by a powerful promise.
+          But before this calm... there was a different man. People in Khansaar
+          knew him. Some called him Deva. Some whispered other names, names born
+          of fear and bloodshed. To my friend Vardha, I was something else
+          entirely. His 'Salaar'—his commander, his muscle, his weapon.
+          <br />
+          <br />
+          There's not much to know about me, really. I honor a promise. That is
+          all. I live for one friend, and I fear one woman—my mother. She is the
+          only one who can humble this monster they speak of. She is the reason
+          I buried the beast.
+          <br />
+          <br />
+          When I am provoked, you will not see anger. You will not see rage. You
+          will just see the outcome. My hands... they still remember the old
+          ways. They remember the promises made in blood and the debts collected
+          in violence.
+          <br />
         </p>
       </section>
 
@@ -194,7 +203,7 @@ const Test = () => {
         </div>
 
         {/* Bottom row: 2 wider cards (centered) */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-10">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10 w-full ">
           {[
             { title: "Velamgadi", src: Image11 },
             { title: "Tattoo", src: Image12 },
@@ -251,14 +260,14 @@ const Test = () => {
       {/* Footer */}
       <footer className="w-full text-black py-12 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+          {/* <div>
             <div className="w-6 h-9 border-4 border-white mb-6"></div>
             <div className="flex gap-4">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="w-6 h-6 bg-white rounded"></div>
+                <div key={i} className="w-6 h-6 bg-black rounded"></div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {["Use cases", "Explore", "Resources"].map((title, i) => (
             <div key={i}>
@@ -280,4 +289,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Salaar;
