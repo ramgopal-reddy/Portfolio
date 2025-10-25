@@ -71,6 +71,12 @@ const Test = () => {
 
       {/* Video Section */}
       <section className="w-full border-b border-white flex flex-col items-center justify-center py-32 px-6 relative">
+        <h2 className="text-center text-5xl md:text-6xl font-['Italianno'] mb-10 text-white">
+          India's Biggest Superstar
+        </h2>
+        <h1 className="text-center text-4xl md:text-5xl font-['Italianno'] mb-10 text-red-600">
+          Prabhas
+        </h1>
         <video
           ref={videoRef}
           src={Prabhas}
