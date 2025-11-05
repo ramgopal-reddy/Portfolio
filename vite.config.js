@@ -11,6 +11,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+  },
+  publicDir: "public", // ensures public folder is copied to dist
+  base: "./", // ✅ IMPORTANT for relative asset paths on Vercel
   server: {
     headers: {
       "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
