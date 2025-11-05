@@ -2,7 +2,8 @@ import { useState } from "react";
 import { CertificationCard } from "./CertificationCard";
 import { CertificateModal } from "./CertificateModal";
 import { certificationsData } from "../../data/certificationsData";
-import Image from "../../../assets/1.png";
+
+import Image from "./SSMB.jpg";
 
 export function CertificationsSection() {
   const [selectedCertificate, setSelectedCertificate] = useState(null);
