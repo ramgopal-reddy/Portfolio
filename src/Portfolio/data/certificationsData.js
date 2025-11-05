@@ -119,7 +119,7 @@ export const certificationsData = [
     date: "2025",
     icon: "☁️",
     certificateImage:
-      "/Oracle Cloud Infrastructure 2025 Certified Generative AI Professional.png",
+      "./Oracle Cloud Infrastructure 2025 Certified Generative AI Professional.png",
     description:
       "Recognized by Oracle for professional-level expertise in building and deploying Generative AI solutions on OCI.",
     skills: [
