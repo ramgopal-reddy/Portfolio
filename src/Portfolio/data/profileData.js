@@ -1,0 +1,12 @@
+export const profileData = [
+  {
+    name: "Ram Gopal Reddy",
+    role: "AI/ML Researcher and Software Developer",
+    bio: "Passionate about leveraging AI and machine learning to solve complex problems and create innovative solutions.",
+    location: "Hyderabad, India",
+    email: "work@email.com",
+    linkedIn: "https://www.linkedin.com/in/ramgopal-reddy",
+    github: "https://www.github.com/ramgopal-reddy",
+    website: "https://www.ramgopalreddy.xyz",
+  },
+];

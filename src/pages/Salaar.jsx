@@ -14,6 +14,7 @@ import Image11 from "../assets/11.png";
 import Image12 from "../assets/12.png";
 import Prabhas from "../assets/Prabhas_SuperStar.mp4";
 import { GoMute, GoUnmute } from "react-icons/go";
+import { AnimatedGrainyBg } from "@/components/ui/animated-grainy-bg";
 
 const Salaar = () => {
   const videoRef = useRef(null);
@@ -29,7 +30,49 @@ const Salaar = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-black to-neutral-400 flex flex-col justify-start items-center text-white">
+    // <div className="bg-gradient-to-b from-black to-neutral-400 flex flex-col justify-start items-center text-white">
+    <div className="flex flex-col justify-start items-center text-white relative overflow-hidden bg-transparent">
+      {/* <div className="fixed inset-0 -z-10">
+        <BubbleBackground
+          bgColorA="rgba(0, 0, 0, 1)"
+          bgColorB="rgba(196, 15, 15, 1)"
+          blendMode="lighten"
+        />
+      </div> */}
+      {/* <div className="fixed inset-0 -z-10">
+        <AnimatedGrainyBg
+          position="absolute"
+          size="full"
+          colors={["#000000", "#1a1a1a", "#2e2e2e", "#ffffff"]}
+          speed={0.8}
+          grainType="noise"
+          grainIntensity={45}
+          grainSize={90}
+          animationType="flow"
+          grainBlendMode="soft-light"
+          darkMode={true}
+          animate={true}
+          zIndex={-1}
+        />
+      </div> */}
+
+      <div className="fixed inset-0 -z-10">
+        <AnimatedGrainyBg
+          position="absolute"
+          size="full"
+          colors={["#000000", "#1a1a1a", "#2e2e2e", "#444444"]}
+          speed={0.8}
+          grainType="noise"
+          grainIntensity={45}
+          grainSize={90}
+          animationType="flow"
+          grainBlendMode="soft-light"
+          darkMode={true}
+          animate={true}
+          zIndex={-1}
+        />
+      </div>
+
       {/* Header */}
       <header className="w-full border-b border-red-600 py-2 lg:px-40 md:px-4 flex flex-wrap justify-between items-center sticky top-0 z-50 backdrop-blur bg-black/30 shadow-md">
         <h1 className="text-5xl font-['Italianno'] text-white">Salaar</h1>
