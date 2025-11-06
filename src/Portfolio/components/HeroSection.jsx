@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
 import { AnimatedBackground } from "animated-backgrounds";
 import { profileData } from "../data/profileData";
 
 export function HeroSection({ scrollToSection }) {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Detect window size
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024); // Tailwind 'lg' breakpoint
+    };
+    handleResize(); // check on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -27,7 +40,7 @@ export function HeroSection({ scrollToSection }) {
         </div>
       </div> */}
       {/* Contained Animated Background */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <AnimatedBackground
           animationName="starryNight"
           blendMode="difference"
@@ -37,7 +50,40 @@ export function HeroSection({ scrollToSection }) {
             position: "absolute",
           }}
         />
-      </div>
+      </div> */}
+
+      {isDesktop ? (
+        // 🌌 Desktop: Starry background
+        <AnimatedBackground
+          animationName="starryNight"
+          blendMode="difference"
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+          }}
+        />
+      ) : (
+        // 📱 Mobile / tablet: Gradient with floating dots
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+          <div className="absolute inset-0 opacity-25">
+            {[...Array(40)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute bg-cyan-400 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  width: `${Math.random() * 4 + 1}px`,
+                  height: `${Math.random() * 4 + 1}px`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${Math.random() * 3 + 2}s`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
