@@ -20,7 +20,7 @@ export function AboutSection() {
               <div className="w-64 h-64 sm:w-80 sm:h-80 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 p-1">
                 <div className="w-full h-full rounded-full bg-gray-700 flex items-center justify-center text-6xl">
                   <img
-                    src="./SSMB.jpg"
+                    src="./SSMB29.jpg"
                     alt="Profile"
                     className="w-full h-full object-cover rounded-full"
                   />
