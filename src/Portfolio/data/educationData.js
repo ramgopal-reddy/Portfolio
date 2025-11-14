@@ -31,7 +31,8 @@ export const educationData = [
     duration: "2019 – 2021",
     grade: "Percentage: 100%",
     highlights: [
-      "Awarded for academic excellence and participation in inter-school science competitions.",
+      "Participation in inter-school science competitions.",
+      "Excelled in mathematics and computer science subjects.",
     ],
   },
 ];

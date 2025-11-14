@@ -32,7 +32,7 @@ export function SkillsSection() {
           <div>
             <h3 className="text-2xl font-semibold mb-8 flex items-center gap-3">
               <Palette className="w-6 h-6 text-cyan-400" />
-              Design & Tools
+              Tools
             </h3>
             <div className="grid grid-cols-2 gap-4">
               {designTools.map((tool, index) => (
