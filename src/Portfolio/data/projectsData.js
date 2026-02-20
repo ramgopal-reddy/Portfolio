@@ -1,10 +1,39 @@
 export const projectsData = [
+ {
+  title: "Hybrid Semantic Product Search System",
+  description:
+    "A production-ready hybrid semantic search engine for intelligent and constraint-aware product retrieval.",
+  image: "🔎",
+  tech: [
+    "Python",
+    "FastAPI",
+    "FAISS",
+    "Google Gemini",
+    "Cloudflare Workers AI",
+    "Vector Embeddings"
+  ],
+  demo: "#",
+  github: "https://github.com/ramgopal-reddy/Vectors_LLM_Model",
+  detailedDescription:
+    "This system combines LLM-based query understanding with high-performance vector search to deliver fast and accurate product retrieval. Natural language queries are processed using Google Gemini to extract structured parameters such as product type, price range, rating, category, and brand. For semantic similarity, 384-dimensional embeddings are generated using Cloudflare Workers AI (BGE-small model). Product embeddings are precomputed and stored in a FAISS index optimized with cosine similarity. The backend, built with FastAPI, performs top-K nearest neighbor search and applies progressive filtering with intelligent semantic fallback to ensure relevant results even under strict constraints.",
+  features: [
+    "LLM-powered structured query extraction",
+    "FAISS-based top-K semantic vector search",
+    "Edge-powered embedding generation with caching",
+    "Progressive filtering with intelligent fallback",
+    "Multi-layer caching for near-millisecond repeated queries"
+  ],
+  timeline: "2 months",
+  challenges:
+    "Balancing semantic relevance with strict structured filtering under 512MB RAM constraints while maintaining low latency and cost efficiency.",
+  role: "Backend developer and system architect."
+},
   {
     title: "MusicPlatform",
     description:
       "A digital platform for streaming and managing music collections.",
     image: "🎵",
-    tech: ["Unknown"], // Language data not specified; update if repo info is available
+    tech: ["React","Firebase"],
     demo: "#",
     github: "https://github.com/ramgopal-reddy/MusicPlatform",
     detailedDescription:
@@ -14,7 +43,7 @@ export const projectsData = [
       "Playlist management",
       "Music discovery features",
     ],
-    timeline: "Ongoing",
+    timeline: "2 months",
     challenges:
       "Ensuring a smooth streaming experience and managing audio data efficiently.",
     role: "Full-stack developer and platform architect.",
