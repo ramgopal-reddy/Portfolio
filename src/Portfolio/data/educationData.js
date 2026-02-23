@@ -6,7 +6,7 @@ export const educationData = [
       "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
     institution: "Lovely Professional University",
     duration: "2023 – 2027",
-    grade: "CGPA: 7.11 / 10",
+    grade: "CGPA: 7.29 / 10",
     highlights: [
       "Studied core computer science subjects including Data Structures, Algorithms, Operating Systems, and Database Management Systems.",
       "Completed coursework in Artificial Intelligence, Machine Learning, and Cloud Computing.",
