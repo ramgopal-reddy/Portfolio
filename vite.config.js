@@ -15,7 +15,7 @@ export default defineConfig({
     outDir: "dist",
   },
   publicDir: "public", // ensures public folder is copied to dist
-  base: "./", // ✅ IMPORTANT for relative asset paths on Vercel
+  base: "./", // IMPORTANT for relative asset paths on Vercel
   server: {
     headers: {
       "Cross-Origin-Opener-Policy": "same-origin-allow-popups",

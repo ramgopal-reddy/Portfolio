@@ -3,7 +3,9 @@ import { CertificationCard } from "./CertificationCard";
 import { CertificateModal } from "./CertificateModal";
 import { certificationsData } from "../../data/certificationsData";
 
-import Image from "../../../assets/1.png";
+// import Image from "../../../assets/1.png";
+
+// import Image from "../../../../public/Ram.jpg";
 
 export function CertificationsSection() {
   const [selectedCertificate, setSelectedCertificate] = useState(null);
@@ -21,11 +23,11 @@ export function CertificationsSection() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full"></div>
           </div>
-          <img
+          {/* <img
             src={Image}
             alt="Decorative"
             className="mx-auto mb-10 w-32 h-32"
-          />
+          /> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificationsData.map((cert, index) => (
