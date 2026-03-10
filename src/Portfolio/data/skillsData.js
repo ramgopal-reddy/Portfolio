@@ -10,7 +10,7 @@ export const technicalSkills = [
   { skill: " MySQL", level: 85 },
   { skill: " Vercel", level: 75 },
   { skill: "Git / GitHub / CI-CD", level: 80 },
-  { skill: "AI & Generative AI Tools (ChatGPT, OpenAI, LangChain)", level: 70 },
+  { skill: "AI & Generative AI Tools", level: 70 },
 ];
 
 // 🎨 Development & Design Tools
