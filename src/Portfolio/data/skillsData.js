@@ -1,8 +1,9 @@
 // 🧠 Core Technical Skills
 export const technicalSkills = [
   { skill: "JavaScript / TypeScript", level: 95 },
-  { skill: "React / Next.js", level: 90 },
-  { skill: "Node.js / Express", level: 85 },
+  // { skill: "React / Next.js", level: 90 },
+  { skill: "React", level: 90 },
+  // { skill: "Node.js / Express", level: 85 },
   { skill: "Python / Django / FastAPI", level: 85 },
   { skill: "C / C++ / Java", level: 80 },
   { skill: "HTML5 / CSS3 / Tailwind CSS", level: 90 },
