@@ -25,7 +25,7 @@ export default function InteractiveHeroSection() {
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translateX(-50%),translateY(-35%)",
+          transform: "translateX(-50%) translateY(-35%)",
           width: "86%",
           height: "60%",
           backgroundColor: "#060010",
