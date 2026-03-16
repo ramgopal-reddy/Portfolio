@@ -15,6 +15,7 @@ import { ResearchSection } from "./components/ResearchSection/ResearchSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { EducationSection } from "./components/EducationSection";
 import InteractiveHeroSection from "./components/InteractiveHeroSection";
+import GallerySection from "./components/GallerySection";
 
 export default function PortfolioPage() {
   const { isMenuOpen, setIsMenuOpen, activeSection, scrollToSection } =
@@ -24,6 +25,7 @@ export default function PortfolioPage() {
   const navItems = [
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
+    { id: "gallery", label: "Gallery" },
     { id: "education", label: "Education" },
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
@@ -88,6 +90,7 @@ export default function PortfolioPage() {
       <HeroSection scrollToSection={scrollToSection} />
       <AboutSection />
       <InteractiveHeroSection/>
+      <GallerySection />
       <EducationSection /> {/* 🎓 Add here — right after About */}
       <SkillsSection /> {/* 💡 Before projects, to show technical foundation */}
       <ProjectsSection /> {/* 💻 Show applied skills next */}
