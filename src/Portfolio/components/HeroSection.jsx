@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { AnimatedBackground } from "animated-backgrounds";
 import { profileData } from "../data/profileData";
+import { useTheme } from "../hooks/useTheme";
 
 export function HeroSection({ scrollToSection }) {
   const [isDesktop, setIsDesktop] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     // Detect window size
@@ -18,7 +20,10 @@ export function HeroSection({ scrollToSection }) {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 transition-all duration-500"
+      style={{
+        transition: `all ${theme.transitions.duration.slow} ${theme.transitions.ease}`,
+      }}
     >
       {/* Animated Background */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
@@ -65,13 +70,21 @@ export function HeroSection({ scrollToSection }) {
         />
       ) : (
         // 📱 Mobile / tablet: Gradient with floating dots
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        <div
+          className="absolute inset-0"
+          style={{
+            background: theme.isDark
+              ? "linear-gradient(to bottom right, #111827, #1f2937, #000000)"
+              : "linear-gradient(to bottom right, #f3f4f6, #e5e7eb, #d1d5db)",
+          }}
+        >
           <div className="absolute inset-0 opacity-25">
             {[...Array(40)].map((_, i) => (
               <div
                 key={i}
-                className="absolute bg-cyan-400 rounded-full animate-pulse"
+                className="absolute rounded-full animate-pulse"
                 style={{
+                  backgroundColor: theme.colors.primary,
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   width: `${Math.random() * 4 + 1}px`,
@@ -86,29 +99,73 @@ export function HeroSection({ scrollToSection }) {
       )}
 
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
+        <h1
+          className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r transition-all duration-300"
+          style={{
+            backgroundImage: `linear-gradient(to right, ${theme.colors.text}, ${theme.colors.primary}, ${theme.colors.secondary})`,
+            transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+          }}
+        >
           {profileData[0].name}
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl text-white/80 mb-8 font-light">
+        <p
+          className="text-xl sm:text-2xl md:text-3xl mb-8 font-light transition-all duration-300"
+          style={{
+            color: theme.colors.textSecondary,
+            transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+          }}
+        >
           {profileData[0].role}
         </p>
-        <p className="text-lg text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p
+          className="text-lg mb-12 max-w-2xl mx-auto leading-relaxed transition-all duration-300"
+          style={{
+            color: theme.colors.textSecondary,
+            transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+          }}
+        >
           {profileData[0].bio}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => scrollToSection("projects")}
-            className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
+            className="px-8 py-4 font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            style={{
+              backgroundColor: theme.colors.primary,
+              color: "#000",
+              boxShadow: `0 0 20px ${theme.colors.primary}40`,
+              transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+            }}
           >
             View Projects
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            style={{
+              borderColor: theme.colors.primary,
+              color: theme.colors.primary,
+              transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = theme.colors.primary;
+              e.target.style.color = "#000";
+              e.target.style.transition = `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`;
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "transparent";
+              e.target.style.color = theme.colors.primary;
+              e.target.style.transition = `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`;
+            }}
           >
             Contact Me
           </button>
+          <div className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105">
+            <a href="/RamGopalReddy.pdf" download>
+              <button>Download Resume</button>
+            </a>
+          </div>
         </div>
 
         {/* Scroll Indicator */}

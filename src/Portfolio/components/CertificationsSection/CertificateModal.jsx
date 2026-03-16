@@ -1,30 +1,44 @@
-import { X, Calendar, Building, Award, Download } from "lucide-react";
+import { X, Calendar, Building, Award } from "lucide-react";
+import { useTheme } from "../../hooks/useTheme";
 
 export function CertificateModal({ certificate, onClose }) {
+  const theme = useTheme();
   if (!certificate) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-all duration-300"
         onClick={onClose}
+        style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}
       />
 
       {/* Modal */}
-      <div className="relative bg-gray-800 border border-white/10 rounded-2xl p-8 max-w-5xl max-h-[90vh] overflow-y-auto mx-4 w-full">
+      <div className={`relative border rounded-2xl p-8 max-w-5xl max-h-[90vh] overflow-y-auto mx-4 w-full transition-all duration-300 ${
+        theme.isDark 
+          ? 'bg-gray-800 border-white/10' 
+          : 'bg-white border-gray-200/50'
+      }`}
+        style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}
+      >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-lg transition-colors duration-200 z-10"
+          className={`absolute top-4 right-4 p-2 rounded-lg transition-colors duration-200 z-10 ${
+            theme.isDark 
+              ? 'hover:bg-white/10 text-white/70 hover:text-white' 
+              : 'hover:bg-gray-100 text-gray-600 hover:text-gray-800'
+          }`}
         >
-          <X className="w-6 h-6 text-white/70 hover:text-white" />
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Certificate Image */}
           <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-lg p-4 shadow-2xl">
+            <div className={`rounded-lg p-4 shadow-2xl ${
+              theme.isDark ? 'bg-white' : 'bg-gray-50'
+            }`}>
               <img
                 src={certificate.certificateImage}
                 alt={`${certificate.name} Certificate`}
@@ -32,13 +46,6 @@ export function CertificateModal({ certificate, onClose }) {
               />
             </div>
 
-            {/* Download Button */}
-            <div className="mt-4 text-center">
-              <button className="flex items-center gap-2 px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-black font-medium rounded-lg transition-colors duration-200 mx-auto">
-                <Download className="w-4 h-4" />
-                Download Certificate
-              </button>
-            </div>
           </div>
 
           {/* Certificate Details */}
@@ -48,10 +55,10 @@ export function CertificateModal({ certificate, onClose }) {
               <div className="flex items-center gap-3 mb-4">
                 <div className="text-4xl">{certificate.icon}</div>
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-2">
+                  <h2 className={`text-3xl font-bold mb-2`} style={{ color: theme.colors.text }}>
                     {certificate.name}
                   </h2>
-                  <div className="flex items-center gap-2 text-white/60">
+                  <div className="flex items-center gap-2" style={{ color: theme.colors.textSecondary }}>
                     <Building className="w-4 h-4" />
                     <span>{certificate.organization}</span>
                   </div>
@@ -63,24 +70,28 @@ export function CertificateModal({ certificate, onClose }) {
             <div className="space-y-6">
               {/* Description */}
               <div>
-                <h3 className="text-lg font-semibold text-cyan-400 mb-3">
+                <h3 className={`text-lg font-semibold mb-3`} style={{ color: theme.colors.primary }}>
                   About This Certification
                 </h3>
-                <p className="text-white/80 leading-relaxed">
+                <p className="leading-relaxed" style={{ color: theme.colors.text }}>
                   {certificate.description}
                 </p>
               </div>
 
               {/* Skills Covered */}
               <div>
-                <h3 className="text-lg font-semibold text-cyan-400 mb-3">
+                <h3 className={`text-lg font-semibold mb-3`} style={{ color: theme.colors.primary }}>
                   Skills Covered
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {certificate.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-sm rounded-full border border-cyan-500/30"
+                      className={`px-3 py-1 text-sm rounded-full border`} style={{ 
+                        backgroundColor: `${theme.colors.primary}20`, 
+                        color: theme.colors.primary, 
+                        borderColor: `${theme.colors.primary}30` 
+                      }}
                     >
                       {skill}
                     </span>
@@ -89,32 +100,34 @@ export function CertificateModal({ certificate, onClose }) {
               </div>
 
               {/* Certificate Details */}
-              <div className="bg-gray-700/50 rounded-lg p-4 space-y-3">
+              <div className={`rounded-lg p-4 space-y-3 ${
+                theme.isDark ? 'bg-gray-700/50' : 'bg-gray-100/50'
+              }`}>
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-cyan-400" />
+                  <Calendar className="w-5 h-5" style={{ color: theme.colors.primary }} />
                   <div>
-                    <p className="text-white/80 font-medium">Issue Date</p>
-                    <p className="text-white/60 text-sm">{certificate.date}</p>
+                    <p className="font-medium" style={{ color: theme.colors.text }}>Issue Date</p>
+                    <p className="text-sm font-mono" style={{ color: theme.colors.textSecondary }}>{certificate.date}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Award className="w-5 h-5 text-cyan-400" />
+                  <Award className="w-5 h-5" style={{ color: theme.colors.primary }} />
                   <div>
-                    <p className="text-white/80 font-medium">Credential ID</p>
-                    <p className="text-white/60 text-sm font-mono">
+                    <p className="font-medium" style={{ color: theme.colors.text }}>Credential ID</p>
+                    <p className="text-sm font-mono" style={{ color: theme.colors.textSecondary }}>
                       {certificate.credentialId}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Building className="w-5 h-5 text-cyan-400" />
+                  <Building className="w-5 h-5" style={{ color: theme.colors.primary }} />
                   <div>
-                    <p className="text-white/80 font-medium">
+                    <p className="font-medium" style={{ color: theme.colors.text }}>
                       Issuing Organization
                     </p>
-                    <p className="text-white/60 text-sm">
+                    <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
                       {certificate.organization}
                     </p>
                   </div>
@@ -122,11 +135,14 @@ export function CertificateModal({ certificate, onClose }) {
               </div>
 
               {/* Verification Note */}
-              <div className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-lg p-4">
-                <p className="text-cyan-400 font-semibold text-sm mb-2">
+              <div className={`border rounded-lg p-4`} style={{ 
+                background: `linear-gradient(to right, ${theme.colors.primary}20, ${theme.colors.secondary}20)`, 
+                borderColor: `${theme.colors.primary}30` 
+              }}>
+                <p className={`font-semibold text-sm mb-2`} style={{ color: theme.colors.primary }}>
                   🔒 Verified Certificate
                 </p>
-                <p className="text-white/70 text-sm">
+                <p className="text-sm" style={{ color: theme.colors.text }}>
                   This certificate has been verified and can be validated using
                   the credential ID above.
                 </p>

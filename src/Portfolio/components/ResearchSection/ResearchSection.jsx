@@ -2,19 +2,21 @@ import { useState } from "react";
 import { ResearchCard } from "./ResearchCard";
 import { ResearchModal } from "./ResearchModal";
 import { researchData } from "../../data/researchData";
+import { useTheme } from "../../hooks/useTheme";
 
 export function ResearchSection() {
   const [selectedPaper, setSelectedPaper] = useState(null);
+  const theme = useTheme();
 
   return (
     <>
-      <section id="research" className="py-20 px-4 sm:px-6 bg-gray-800/50">
-        <div className="max-w-6xl mx-auto">
+      <section id="research" className={`py-20 px-4 sm:px-6 transition-all duration-300 ${theme.isDark ? 'bg-gray-800/50' : 'bg-gray-100/50'}`}> {/* bg-gray-800/50 - dark background with transparency */}
+        <div className="max-w-6xl mx-auto" style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${theme.colors.gradient}`}>
               Research & Publications
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r" style={{ background: `linear-gradient(to right, ${theme.colors.primary}, ${theme.colors.secondary})` }}></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

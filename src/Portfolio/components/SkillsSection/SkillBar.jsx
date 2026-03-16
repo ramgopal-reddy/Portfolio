@@ -2,7 +2,7 @@ export function SkillBar({ skill, level }) {
   return (
     <div className="group">
       <div className="flex justify-between mb-2">
-        <span className="text-white/80 font-medium">{skill}</span>
+        <span className="text-cyan-400 font-medium">{skill}</span>
         <span className="text-cyan-400 text-sm">{level}%</span>
       </div>
       <div className="h-2 bg-gray-700 rounded-full overflow-hidden">

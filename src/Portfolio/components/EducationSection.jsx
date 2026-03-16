@@ -2,17 +2,20 @@
 
 import { GraduationCap, Calendar, Star } from "lucide-react";
 import { educationData } from "../data/educationData";
+import { useTheme } from "../hooks/useTheme";
 
 export function EducationSection() {
+  const theme = useTheme();
+
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 bg-gray-800/50">
-      <div className="max-w-5xl mx-auto">
+    <section id="education" className={`py-20 px-4 sm:px-6 transition-all duration-300 ${theme.isDark ? 'bg-gray-800/50' : 'bg-gray-100/50'}`}> {/* bg-gray-800/50 - dark background with transparency */}
+      <div className="max-w-5xl mx-auto" style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${theme.colors.gradient}`}>
             Education
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r" style={{ background: `linear-gradient(to right, ${theme.colors.primary}, ${theme.colors.secondary})` }}></div>
         </div>
 
         {/* Education Cards */}
@@ -20,21 +23,21 @@ export function EducationSection() {
           {educationData.map((edu, index) => (
             <div
               key={index}
-              className="bg-gray-800/50 border border-white/10 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
+              className={`border rounded-2xl p-6 transition-all duration-300 hover:shadow-lg ${theme.isDark ? 'border-white/10 hover:border-cyan-500/40 hover:shadow-cyan-500/10' : 'border-gray-200/50 hover:border-purple-500/40 hover:shadow-purple-500/10'}`}
             >
               {/* Header */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <GraduationCap className="w-6 h-6 text-cyan-400" />
+                  <GraduationCap className="w-6 h-6" style={{ color: theme.colors.primary }} />
                   <div>
-                    <h3 className="text-2xl font-semibold text-white">
+                    <h3 className="text-2xl font-semibold" style={{ color: theme.colors.text }}>
                       {edu.degree}
                     </h3>
-                    <p className="text-white/70 text-sm">{edu.institution}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textSecondary }}>{edu.institution}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-white/60 text-sm mt-2 sm:mt-0">
+                <div className="flex items-center gap-2 text-sm mt-2 sm:mt-0" style={{ color: theme.colors.textSecondary }}>
                   <Calendar className="w-4 h-4" />
                   <span>{edu.duration}</span>
                 </div>
@@ -42,7 +45,7 @@ export function EducationSection() {
 
               {/* Grade */}
               {edu.grade && (
-                <p className="text-cyan-400 font-medium mb-3">{edu.grade}</p>
+                <p className="font-medium mb-3" style={{ color: theme.colors.primary }}>{edu.grade}</p>
               )}
 
               {/* Highlights */}
@@ -50,10 +53,10 @@ export function EducationSection() {
                 {edu.highlights.map((point, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 text-white/80"
+                    className="flex items-start gap-3"
                   >
-                    <Star className="w-4 h-4 text-purple-400 mt-1 flex-shrink-0" />
-                    <span className="text-sm leading-relaxed">{point}</span>
+                    <Star className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: theme.colors.secondary }} />
+                    <span className="text-sm leading-relaxed" style={{ color: theme.colors.text }}>{point}</span>
                   </li>
                 ))}
               </ul>

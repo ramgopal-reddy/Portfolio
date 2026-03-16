@@ -1,5 +1,6 @@
 import "../index.css";
 import { useNavigation } from "./hooks/useNavigation";
+import { useTheme } from "./hooks/useTheme";
 import { Navigation } from "./components/Navigation";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
@@ -9,6 +10,7 @@ import { SkillsSection } from "./components/SkillsSection/SkillsSection";
 import { ContactSection } from "./components/ContactSection/ContactSection";
 import { Footer } from "./components/Footer";
 import { AnimatedGrainyBg } from "@/components/ui/animated-grainy-bg";
+import Antigravity from "@/components/Antigravity";
 import { ResearchSection } from "./components/ResearchSection/ResearchSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { EducationSection } from "./components/EducationSection";
@@ -16,6 +18,7 @@ import { EducationSection } from "./components/EducationSection";
 export default function PortfolioPage() {
   const { isMenuOpen, setIsMenuOpen, activeSection, scrollToSection } =
     useNavigation();
+  const theme = useTheme();
 
   const navItems = [
     { id: "hero", label: "Home" },
@@ -30,8 +33,10 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div className="min-h-screen text-white font-inter">
-      <div className="fixed inset-0 -z-10 ">
+    <div className={`min-h-screen font-inter transition-all duration-300 ${theme.isDark ? 'text-white' : 'text-gray-800'}`} 
+         style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
+      {/* AnimatedGrainyBg - commented out and replaced with Antigravity */}
+      {/* <div className="fixed inset-0 -z-10 ">
         <AnimatedGrainyBg
           position="absolute"
           size="full"
@@ -45,6 +50,31 @@ export default function PortfolioPage() {
           darkMode={true}
           animate={true}
           zIndex={-1}
+        />
+      </div> */}
+      
+      {/* Antigravity Background */}
+      <div className="fixed inset-0 -z-10 transition-all duration-500" 
+           style={{ 
+             transition: `all ${theme.transitions.duration.slow} ${theme.transitions.ease}`,
+             opacity: theme.isDark ? 1 : 0.8
+           }}>
+        <Antigravity
+          count={300}
+          magnetRadius={36}
+          ringRadius={9}
+          waveSpeed={1.6}
+          waveAmplitude={1}
+          particleSize={1.5}
+          lerpSpeed={0.05}
+          color={theme.colors.primary}
+          autoAnimate
+          particleVariance={1}
+          rotationSpeed={0}
+          depthFactor={1}
+          pulseSpeed={3}
+          particleShape="capsule"
+          fieldStrength={10}
         />
       </div>
       <Navigation
@@ -62,6 +92,25 @@ export default function PortfolioPage() {
       <ResearchSection /> {/* 📄 Show academic & innovative side */}
       <CertificationsSection /> {/* 🧾 Reinforce expertise with credentials */}
       <ExperienceSection /> {/* 💼 Real-world application of skills */}
+      {/* <div style={{ width: "100%", height: "400px", position: "relative" }}>
+        <Antigravity
+          count={300}
+          magnetRadius={36}
+          ringRadius={9}
+          waveSpeed={1.6}
+          waveAmplitude={1}
+          particleSize={1.5}
+          lerpSpeed={0.05}
+          color="#ffffff"
+          autoAnimate
+          particleVariance={1}
+          rotationSpeed={0}
+          depthFactor={1}
+          pulseSpeed={3}
+          particleShape="capsule"
+          fieldStrength={10}
+        />
+      </div> */}
       <ContactSection /> {/* 📩 Networking opportunity */}
       <Footer navItems={navItems} scrollToSection={scrollToSection} />
       {/* <style jsx global>{`

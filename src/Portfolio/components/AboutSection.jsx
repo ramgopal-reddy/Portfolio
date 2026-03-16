@@ -1,24 +1,27 @@
 import { Code, MapPin, Mail } from "lucide-react";
 import { Demo } from "./Demo";
 import { profileData } from "../data/profileData";
+import { useTheme } from "../hooks/useTheme";
 
 export function AboutSection() {
+  const theme = useTheme();
+
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 bg-gray-800/50">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className={`py-20 px-4 sm:px-6 transition-all duration-300 ${theme.isDark ? 'bg-gray-800/50' : 'bg-gray-100/50'}`}> {/* bg-gray-800/50 - dark background with transparency */}
+      <div className="max-w-6xl mx-auto" style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${theme.colors.gradient}`}>
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r" style={{ background: `linear-gradient(to right, ${theme.colors.primary}, ${theme.colors.secondary})` }}></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Profile Image */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <div className="relative inline-block">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 p-1">
-                <div className="w-full h-full rounded-full bg-gray-700 flex items-center justify-center text-6xl">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 mx-auto lg:mx-0 rounded-full p-1" style={{ background: `linear-gradient(to bottom right, ${theme.colors.primary}, ${theme.colors.secondary})` }}>
+                <div className={`w-full h-full rounded-full flex items-center justify-center text-6xl ${theme.isDark ? 'bg-gray-700' : 'bg-gray-200'}`}>
                   <img
                     // src="./SSMB29.jpg"
                     src="./Ram.jpg"
@@ -27,7 +30,7 @@ export function AboutSection() {
                   />
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center animate-pulse">
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full flex items-center justify-center animate-pulse" style={{ backgroundColor: theme.colors.primary }}>
                 <Code className="w-8 h-8 text-black" />
               </div>
             </div>
@@ -35,7 +38,7 @@ export function AboutSection() {
 
           {/* About Content */}
           <div className="order-1 lg:order-2">
-            <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
+            <h3 className="text-2xl font-semibold mb-6" style={{ color: theme.colors.primary }}>
               {profileData[0].role}
             </h3>
             {/* <div className="space-y-4 text-white/80 leading-relaxed">
@@ -60,11 +63,11 @@ export function AboutSection() {
             <Demo />
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-white/60">
+              <div className="flex items-center gap-2" style={{ color: theme.colors.textSecondary }}>
                 <MapPin className="w-4 h-4" />
                 <span>{profileData[0].location}</span>
               </div>
-              <div className="flex items-center gap-2 text-white/60">
+              <div className="flex items-center gap-2" style={{ color: theme.colors.textSecondary }}>
                 <Mail className="w-4 h-4" />
                 <span>{profileData[0].email}</span>
               </div>

@@ -1,35 +1,37 @@
 import { X, Calendar, User, CheckCircle } from "lucide-react";
+import { useTheme } from "../../hooks/useTheme";
 
 export function ProjectModal({ project, onClose }) {
+  const theme = useTheme();
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-all duration-300"
         onClick={onClose}
+        style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}
       />
 
       {/* Modal */}
-      <div className="relative bg-gray-800 border border-white/10 rounded-2xl p-8 max-w-4xl max-h-[90vh] overflow-y-auto mx-4 w-full">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
-        >
-          <X className="w-6 h-6 text-white/70 hover:text-white" />
-        </button>
+      <div className={`relative border rounded-2xl p-8 max-w-4xl max-h-[90vh] overflow-y-auto mx-4 w-full transition-all duration-300 ${
+        theme.isDark 
+          ? 'bg-gray-800 border-white/10' 
+          : 'bg-white border-gray-200/50'
+      }`}
+        style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}
+      >
 
         {/* Project Header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="text-4xl">{project.image}</div>
             <div>
-              <h2 className="text-3xl font-bold text-white mb-2">
+              <h2 className="text-3xl font-bold mb-2" style={{ color: theme.colors.text }}>
                 {project.title}
               </h2>
-              <div className="flex items-center gap-4 text-white/60 text-sm">
+              <div className="flex items-center gap-4 text-sm" style={{ color: theme.colors.textSecondary }}>
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4" />
                   <span>{project.role}</span>
@@ -47,7 +49,11 @@ export function ProjectModal({ project, onClose }) {
             {project.tech.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-sm rounded-full border border-cyan-500/30"
+                className="px-3 py-1 text-sm rounded-full border" style={{ 
+                  backgroundColor: `${theme.colors.primary}20`, 
+                  color: theme.colors.primary, 
+                  borderColor: `${theme.colors.primary}30` 
+                }}
               >
                 {tech}
               </span>
@@ -74,7 +80,7 @@ export function ProjectModal({ project, onClose }) {
             {project.features.map((feature, index) => (
               <div key={index} className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-white/80 text-sm">{feature}</span>
+                <span className="text-sm" style={{ color: theme.colors.textSecondary }}>{feature}</span>
               </div>
             ))}
           </div>
@@ -92,13 +98,22 @@ export function ProjectModal({ project, onClose }) {
         <div className="flex gap-4 pt-6 border-t border-white/10">
           <a
             href={project.demo}
-            className="flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg transition-colors duration-200"
+            className="flex items-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors duration-200" style={{ 
+              backgroundColor: theme.colors.primary, 
+              color: '#000',
+              transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`
+            }}
           >
             <span>View Live Demo</span>
           </a>
           <a
             href={project.github}
-            className="flex items-center gap-2 px-6 py-3 border border-white/20 hover:border-white/40 text-white/70 hover:text-white font-semibold rounded-lg transition-colors duration-200"
+            className="flex items-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors duration-200" style={{ 
+              backgroundColor: theme.isDark ? 'rgba(31, 41, 55, 0.5)' : 'rgba(243, 244, 246, 0.8)', 
+              border: theme.colors.border,
+              color: theme.colors.text,
+              transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`
+            }}
           >
             <span>View Source Code</span>
           </a>
