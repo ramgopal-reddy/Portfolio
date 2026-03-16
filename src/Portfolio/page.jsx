@@ -14,6 +14,7 @@ import Antigravity from "@/components/Antigravity";
 import { ResearchSection } from "./components/ResearchSection/ResearchSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { EducationSection } from "./components/EducationSection";
+import InteractiveHeroSection from "./components/InteractiveHeroSection";
 
 export default function PortfolioPage() {
   const { isMenuOpen, setIsMenuOpen, activeSection, scrollToSection } =
@@ -86,6 +87,7 @@ export default function PortfolioPage() {
       />
       <HeroSection scrollToSection={scrollToSection} />
       <AboutSection />
+      <InteractiveHeroSection/>
       <EducationSection /> {/* 🎓 Add here — right after About */}
       <SkillsSection /> {/* 💡 Before projects, to show technical foundation */}
       <ProjectsSection /> {/* 💻 Show applied skills next */}
