@@ -76,7 +76,7 @@ export const projectsData = [
       "Interactive web project for exploring space objects and data.",
     image: "🚀",
     tech: ["JavaScript", "CSS", "HTML"],
-    demo: "#",
+    demo: "https://spaceexplore.ramgopalreddy.xyz/",
     github: "https://github.com/ramgopal-reddy/SpaceExplore",
     detailedDescription:
       "SpaceExplore is a web-based application that visually presents data about space, such as planets, stars, and missions. It utilizes engaging interfaces and interactive features to educate and inspire curiosity about the universe.",
