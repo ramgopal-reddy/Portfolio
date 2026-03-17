@@ -36,8 +36,12 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div className={`min-h-screen font-inter transition-all duration-300 ${theme.isDark ? 'text-white' : 'text-gray-800'}`} 
-         style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
+    <div
+      className={`min-h-screen font-inter transition-all duration-300 ${theme.isDark ? "text-white" : "text-gray-800"}`}
+      style={{
+        transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+      }}
+    >
       {/* AnimatedGrainyBg - commented out and replaced with Antigravity */}
       {/* <div className="fixed inset-0 -z-10 ">
         <AnimatedGrainyBg
@@ -55,13 +59,14 @@ export default function PortfolioPage() {
           zIndex={-1}
         />
       </div> */}
-      
       {/* Antigravity Background */}
-      <div className="fixed inset-0 -z-10 transition-all duration-500" 
-           style={{ 
-             transition: `all ${theme.transitions.duration.slow} ${theme.transitions.ease}`,
-             opacity: theme.isDark ? 1 : 0.8
-           }}>
+      <div
+        className="fixed inset-0 -z-10 transition-all duration-500"
+        style={{
+          transition: `all ${theme.transitions.duration.slow} ${theme.transitions.ease}`,
+          opacity: theme.isDark ? 1 : 0.8,
+        }}
+      >
         <Antigravity
           count={300}
           magnetRadius={36}
@@ -89,7 +94,7 @@ export default function PortfolioPage() {
       />
       <HeroSection scrollToSection={scrollToSection} />
       <AboutSection />
-      <InteractiveHeroSection/>
+      {/* <InteractiveHeroSection/> */}
       <GallerySection />
       <EducationSection /> {/* 🎓 Add here — right after About */}
       <SkillsSection /> {/* 💡 Before projects, to show technical foundation */}

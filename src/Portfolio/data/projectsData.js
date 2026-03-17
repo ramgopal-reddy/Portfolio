@@ -27,6 +27,7 @@ export const projectsData = [
     challenges:
       "Balancing semantic relevance with strict structured filtering under 512MB RAM constraints while maintaining low latency and cost efficiency.",
     role: "Backend developer and system architect.",
+    projectImg: "./projects/HybridSearch.png",
   },
   {
     title: "MusicPlatform",
@@ -47,6 +48,7 @@ export const projectsData = [
     challenges:
       "Ensuring a smooth streaming experience and managing audio data efficiently.",
     role: "Full-stack developer and platform architect.",
+    projectImg: "./projects/music.webp",
   },
   {
     title: "HealthInsuranceModel",
@@ -66,6 +68,7 @@ export const projectsData = [
     timeline: "2 months",
     challenges: "Building robust models with limited or imbalanced datasets.",
     role: "ML model developer and data analyst.",
+    projectImg: "./projects/insurance.webp",
   },
   {
     title: "SpaceExplore",
@@ -86,6 +89,7 @@ export const projectsData = [
     challenges:
       "Rendering complex data interactively while maintaining performance.",
     role: "Front-end developer and UI/UX designer.",
+    projectImg: "./projects/Space.png",
   },
   {
     title: "Smart-Parking",
@@ -105,6 +109,7 @@ export const projectsData = [
     timeline: "Ongoing",
     challenges: "Integrating real-time data streams with predictive analytics.",
     role: "Data science lead and dashboard developer.",
+    projectImg: "./projects/SmartParking.webp",
   },
   {
     title: "Resume_Compare",
@@ -125,26 +130,28 @@ export const projectsData = [
     challenges:
       "Accurately extracting and aligning key skills from varied resume formats.",
     role: "Full-stack developer and algorithm designer.",
+    projectImg: "./projects/resumeCompare.webp",
   },
-  {
-    title: "HealthInsuranceLLM",
-    description: "Large Language Model application for health insurance tasks.",
-    image: "🤖",
-    tech: ["Python"],
-    demo: "#",
-    github: "https://github.com/ramgopal-reddy/HealthInsuranceLLM",
-    detailedDescription:
-      "This project applies large language models to solve tasks in the health insurance domain. It may include claim automation, data extraction from documents, or customer query response using NLP. The system aims to streamline insurance processes.",
-    features: [
-      "NLP for document understanding",
-      "Automated claim assistance",
-      "Conversational query handling",
-    ],
-    timeline: "Ongoing",
-    challenges:
-      "Fine-tuning LLMs for specialized insurance vocabulary and regulatory compliance.",
-    role: "NLP engineer and machine learning specialist.",
-  },
+  // {
+  //   title: "HealthInsuranceLLM",
+  //   description: "Large Language Model application for health insurance tasks.",
+  //   image: "🤖",
+  //   tech: ["Python"],
+  //   demo: "#",
+  //   github: "https://github.com/ramgopal-reddy/HealthInsuranceLLM",
+  //   detailedDescription:
+  //     "This project applies large language models to solve tasks in the health insurance domain. It may include claim automation, data extraction from documents, or customer query response using NLP. The system aims to streamline insurance processes.",
+  //   features: [
+  //     "NLP for document understanding",
+  //     "Automated claim assistance",
+  //     "Conversational query handling",
+  //   ],
+  //   timeline: "Ongoing",
+  //   challenges:
+  //     "Fine-tuning LLMs for specialized insurance vocabulary and regulatory compliance.",
+  //   role: "NLP engineer and machine learning specialist.",
+  //   projectImg: "./projects/MLmodel.jpeg",
+  // },
   {
     title: "PlagarismModel",
     description: "A Python tool for detecting text plagiarism in documents.",
@@ -163,6 +170,7 @@ export const projectsData = [
     challenges:
       "Optimizing text similarity algorithms for speed and accuracy on large datasets.",
     role: "Algorithm designer and lead Python developer.",
+    projectImg: "./projects/Plagiarisim.png",
   },
   {
     title: "MedicalAI & MedicalAI_UI",
@@ -183,6 +191,7 @@ export const projectsData = [
     challenges:
       "Integrating complex AI models with a dynamic web user interface and ensuring accurate data exchange.",
     role: "End-to-end developer: built models, designed UI, and oversaw integration.",
+    projectImg: "./projects/healthcare.jpeg",
   },
   {
     title: "CipherSchools_ML",
@@ -203,5 +212,6 @@ export const projectsData = [
     challenges:
       "Presenting complex ML concepts in a clear, approachable manner for beginners.",
     role: "Notebook author and ML content creator.",
+    projectImg: "./projects/MLmodel.jpeg",
   },
 ];
