@@ -2,11 +2,12 @@
 @import "tw-animate-css";
 @plugin "tailwindcss-animate";
 
-
-@custom-variant dark (&:is(.dark *));
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
 
 html {
   scroll-behavior: smooth;
@@ -51,28 +52,38 @@ html {
   --animate-bounce-vertical: bounceV 20s infinite ease-in-out;
   --animate-bounce-horizontal: bounceH 30s infinite ease-in-out;
   --animate-move-in-circle: moveInCircle 30s linear infinite;
+
   @keyframes bounceV {
-  0%, 100% {
-    transform: translateY(-50%);
+
+    0%,
+    100% {
+      transform: translateY(-50%);
     }
-  50% {
-    transform: translateY(50%);
+
+    50% {
+      transform: translateY(50%);
     }
   }
+
   @keyframes bounceH {
-  0%, 100% {
-    transform: translateX(-50%) translateY(-10%);
+
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(-10%);
     }
-  50% {
-    transform: translateX(50%) translateY(10%);
+
+    50% {
+      transform: translateX(50%) translateY(10%);
     }
   }
+
   @keyframes moveInCircle {
-  0% {
-    transform: rotate(0deg);
+    0% {
+      transform: rotate(0deg);
     }
-  100% {
-    transform: rotate(360deg);
+
+    100% {
+      transform: rotate(360deg);
     }
   }
 }
@@ -150,6 +161,7 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

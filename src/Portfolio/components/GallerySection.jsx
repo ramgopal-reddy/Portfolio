@@ -14,6 +14,11 @@ const GallerySection = () => {
     { id: 1, src: "./Ram.jpg", title: "Profile Photo", category: "personal" },
     { id: 2, src: "./SSMB29.jpg", title: "Professional", category: "personal" },
     { id: 3, src: "./SSMB.jpg", title: "Casual", category: "personal" },
+    { id: 13, src: "./Ram1.jpg", title: "Profile Photo", category: "personal" },
+    { id: 14, src: "./Ram2.jpg", title: "Professional", category: "personal" },
+    { id: 15, src: "./Ram3.jpg", title: "Casual", category: "personal" },
+    { id: 16, src: "./Ram4.jpg", title: "Profile Photo", category: "personal" },
+    { id: 17, src: "./Ram5.jpg", title: "Professional", category: "personal" },
     // { id: 4, src: "./SSMBCut.png", title: "Creative", category: "personal" },
     {
       id: 5,
@@ -272,7 +277,7 @@ const GallerySection = () => {
     );
 
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Featured large image */}
         <div
           className="md:col-span-2 lg:col-span-2 relative group cursor-pointer rounded-2xl overflow-hidden transition-all duration-500 hover:scale-102 hover:shadow-2xl"
@@ -284,7 +289,7 @@ const GallerySection = () => {
               alt={galleryImages[0].title}
               className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
               style={{
-                objectFit: featuredDims.aspectRatio > 1.5 ? "contain" : "cover",
+                objectFit: featuredDims.aspectRatio > 1 ? "contain" : "cover",
               }}
               onError={(e) => {
                 e.target.src = "./title.png";
@@ -407,7 +412,7 @@ const GallerySection = () => {
       id="gallery"
       className="py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900"
     >
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {

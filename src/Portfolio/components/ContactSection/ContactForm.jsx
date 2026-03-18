@@ -14,8 +14,16 @@ export function ContactForm() {
     }
   };
   return (
-    <div className={`border rounded-xl p-8 transition-all duration-300 ${theme.isDark ? 'bg-gray-800/50 border-white/10' : 'bg-white border-gray-200/50'}`} style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
-      <h3 className="text-xl font-semibold mb-6 flex items-center gap-2" style={{ color: theme.colors.text }}>
+    <div
+      className={`border rounded-xl p-8 transition-all duration-300 ${theme.isDark ? "bg-gray-800/50 border-white/10" : "bg-white border-gray-200/50"}`}
+      style={{
+        transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+      }}
+    >
+      <h3
+        className="text-xl font-semibold mb-6 flex items-center gap-2"
+        style={{ color: theme.colors.text }}
+      >
         <Send className="w-5 h-5" style={{ color: theme.colors.primary }} />
         Send a Message
       </h3>

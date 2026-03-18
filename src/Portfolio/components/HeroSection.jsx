@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatedBackground } from "animated-backgrounds";
 import { profileData } from "../data/profileData";
 import { useTheme } from "../hooks/useTheme";
+import { Linkedin } from "lucide-react";
 
 export function HeroSection({ scrollToSection }) {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -161,9 +162,30 @@ export function HeroSection({ scrollToSection }) {
           >
             Contact Me
           </button>
-          <div className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105">
+          <div
+            className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            style={{
+              borderColor: theme.colors.primary,
+              color: theme.colors.primary,
+              transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+            }}
+          >
             <a href="/RamGopalReddy.pdf" download>
               <button>Download Resume</button>
+            </a>
+          </div>
+          <div
+            className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            style={{
+              backgroundColor: theme.colors.primary,
+            }}
+          >
+            <a
+              href="./RamGopalReddy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button>View Resume</button>
             </a>
           </div>
         </div>
