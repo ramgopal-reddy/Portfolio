@@ -127,7 +127,8 @@ export function HeroSection({ scrollToSection }) {
           {profileData[0].bio}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* <div className="flex flex-row gap-4 justify-center"> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 justify-items-center">
           <button
             onClick={() => scrollToSection("projects")}
             className="px-8 py-4 font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
@@ -164,6 +165,20 @@ export function HeroSection({ scrollToSection }) {
           <div
             className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
             style={{
+              backgroundColor: theme.colors.primary,
+            }}
+          >
+            <a
+              href="./SpecializedCV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button>AI/ML Resume</button>
+            </a>
+          </div>
+          <div
+            className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            style={{
               borderColor: theme.colors.primary,
               color: theme.colors.primary,
               transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
@@ -185,6 +200,22 @@ export function HeroSection({ scrollToSection }) {
               rel="noopener noreferrer"
             >
               <button>View Resume</button>
+            </a>
+          </div>
+          <div
+            className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            style={{
+              borderColor: theme.colors.primary,
+              color: theme.colors.primary,
+              transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+            }}
+          >
+            <a
+              href="https://github.com/ramgopal-reddy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Profile
             </a>
           </div>
         </div>
