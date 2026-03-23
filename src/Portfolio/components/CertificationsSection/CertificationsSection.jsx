@@ -3,6 +3,7 @@ import { CertificationCard } from "./CertificationCard";
 import { CertificateModal } from "./CertificateModal";
 import { certificationsData } from "../../data/certificationsData";
 import { useTheme } from "../../hooks/useTheme";
+import { DualHighlight } from "@/components/DualHighlight";
 
 // import Image from "../../../assets/1.png";
 
@@ -16,14 +17,26 @@ export function CertificationsSection() {
     <>
       <section
         id="certifications"
-        className={`py-20 px-4 sm:px-6 transition-all duration-300 ${theme.isDark ? 'bg-gray-800/50' : 'bg-gray-100/50'}`} /* bg-gray-800/50 - dark background with transparency */
+        className={`py-20 px-4 sm:px-6 transition-all duration-300 ${theme.isDark ? "bg-gray-800/50" : "bg-gray-100/50"}`} /* bg-gray-800/50 - dark background with transparency */
       >
-        <div className="max-w-6xl mx-auto" style={{ transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}` }}>
+        <div
+          className="max-w-6xl mx-auto"
+          style={{
+            transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+          }}
+        >
           <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${theme.colors.gradient}`}>
-              Certifications
+            <h2
+              className={`text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r ${theme.colors.gradient}`}
+            >
+              <DualHighlight first="Certifications" second="Evaluation" />
             </h2>
-            <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r" style={{ background: `linear-gradient(to right, ${theme.colors.primary}, ${theme.colors.secondary})` }}></div>
+            <div
+              className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r"
+              style={{
+                background: `linear-gradient(to right, ${theme.colors.primary}, ${theme.colors.secondary})`,
+              }}
+            ></div>
           </div>
           {/* <img
             src={Image}

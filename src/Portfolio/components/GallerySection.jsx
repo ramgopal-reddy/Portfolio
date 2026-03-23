@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { X, ZoomIn, Grid, Circle, Maximize2 } from "lucide-react";
+import { DualHighlight } from "@/components/DualHighlight";
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -14,60 +15,60 @@ const GallerySection = () => {
     { id: 1, src: "./Ram.jpg", title: "Profile Photo", category: "personal" },
     { id: 2, src: "./SSMB29.jpg", title: "Professional", category: "personal" },
     { id: 3, src: "./SSMB.jpg", title: "Casual", category: "personal" },
-    { id: 13, src: "./Ram1.jpg", title: "Profile Photo", category: "personal" },
-    { id: 14, src: "./Ram2.jpg", title: "Professional", category: "personal" },
-    { id: 15, src: "./Ram3.jpg", title: "Casual", category: "personal" },
-    { id: 16, src: "./Ram4.jpg", title: "Profile Photo", category: "personal" },
-    { id: 17, src: "./Ram5.jpg", title: "Professional", category: "personal" },
+    { id: 4, src: "./Ram1.jpg", title: "Profile Photo", category: "personal" },
+    { id: 5, src: "./Ram2.jpg", title: "Professional", category: "personal" },
+    { id: 6, src: "./Ram3.jpg", title: "Casual", category: "personal" },
+    { id: 7, src: "./Ram4.jpg", title: "Profile Photo", category: "personal" },
+    { id: 8, src: "./Ram5.jpg", title: "Professional", category: "personal" },
     // { id: 4, src: "./SSMBCut.png", title: "Creative", category: "personal" },
-    {
-      id: 5,
-      src: "./Oracle AI Vector Search Certified Professional.png",
-      title: "Oracle AI Vector Search",
-      category: "certification",
-    },
-    {
-      id: 6,
-      src: "./Oracle Cloud Infrastructure 2025 Certified Generative AI Professional.png",
-      title: "Oracle Cloud Infrastructure",
-      category: "certification",
-    },
-    {
-      id: 7,
-      src: "./Oracle Fusion AI Agent Studio Certified Foundations Associate - Rel 1.png",
-      title: "Oracle Fusion AI Agent",
-      category: "certification",
-    },
-    {
-      id: 8,
-      src: "./Build Generative AI Apps and Solutions with No-Code Tools.png",
-      title: "Generative AI Apps",
-      category: "course",
-    },
-    {
-      id: 9,
-      src: "./ChatGPT-4 Prompt Engineering ChatGPT Generative AI & LLM.png",
-      title: "ChatGPT Prompt Engineering",
-      category: "course",
-    },
-    {
-      id: 10,
-      src: "./Computational_Theory_Language_Principle_Finite_Automata_Theory.png",
-      title: "Computational Theory",
-      category: "course",
-    },
-    {
-      id: 11,
-      src: "./Fundamentals of Network Communication.png",
-      title: "Network Communication",
-      category: "course",
-    },
-    {
-      id: 12,
-      src: "./Introduction to Git and GitHub by Google.png",
-      title: "Git & GitHub",
-      category: "course",
-    },
+    // {
+    //   id: 5,
+    //   src: "./Oracle AI Vector Search Certified Professional.png",
+    //   title: "Oracle AI Vector Search",
+    //   category: "certification",
+    // },
+    // {
+    //   id: 6,
+    //   src: "./Oracle Cloud Infrastructure 2025 Certified Generative AI Professional.png",
+    //   title: "Oracle Cloud Infrastructure",
+    //   category: "certification",
+    // },
+    // {
+    //   id: 7,
+    //   src: "./Oracle Fusion AI Agent Studio Certified Foundations Associate - Rel 1.png",
+    //   title: "Oracle Fusion AI Agent",
+    //   category: "certification",
+    // },
+    // {
+    //   id: 8,
+    //   src: "./Build Generative AI Apps and Solutions with No-Code Tools.png",
+    //   title: "Generative AI Apps",
+    //   category: "course",
+    // },
+    // {
+    //   id: 9,
+    //   src: "./ChatGPT-4 Prompt Engineering ChatGPT Generative AI & LLM.png",
+    //   title: "ChatGPT Prompt Engineering",
+    //   category: "course",
+    // },
+    // {
+    //   id: 10,
+    //   src: "./Computational_Theory_Language_Principle_Finite_Automata_Theory.png",
+    //   title: "Computational Theory",
+    //   category: "course",
+    // },
+    // {
+    //   id: 11,
+    //   src: "./Fundamentals of Network Communication.png",
+    //   title: "Network Communication",
+    //   category: "course",
+    // },
+    // {
+    //   id: 12,
+    //   src: "./Introduction to Git and GitHub by Google.png",
+    //   title: "Git & GitHub",
+    //   category: "course",
+    // },
   ];
 
   // Load image dimensions
@@ -454,9 +455,9 @@ const GallerySection = () => {
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text">
-            Gallery Showcase
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text">
+            <DualHighlight first="Gallery" second="Data Exploration" />
           </h2>
           <div className="w-32 h-1 mx-auto rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></div>
           <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
@@ -466,7 +467,7 @@ const GallerySection = () => {
         </div>
 
         {/* View Mode Controls */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex justify-center gap-4 mb-4">
           <button
             onClick={() => setViewMode("hybrid")}
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${

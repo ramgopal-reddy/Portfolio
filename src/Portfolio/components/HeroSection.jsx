@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { AnimatedBackground } from "animated-backgrounds";
 import { profileData } from "../data/profileData";
 import { useTheme } from "../hooks/useTheme";
-import { Linkedin } from "lucide-react";
 
 export function HeroSection({ scrollToSection }) {
   const [isDesktop, setIsDesktop] = useState(false);

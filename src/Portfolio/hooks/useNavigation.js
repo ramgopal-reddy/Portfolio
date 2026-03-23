@@ -17,6 +17,7 @@ export function useNavigation() {
       const sections = [
         "hero",
         "about",
+        "gallery",
         "education",
         "skills",
         "projects",

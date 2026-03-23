@@ -26,16 +26,87 @@ export default function PortfolioPage() {
   const scrollProgress = useScrollProgress();
 
   const navItems = [
-    { id: "hero", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "gallery", label: "Gallery" },
-    { id: "education", label: "Education" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "research", label: "Research" },
-    { id: "certifications", label: "Certifications" },
-    { id: "experience", label: "Experience" },
-    { id: "contact", label: "Contact" },
+    // { id: "hero", label: "Home" },
+    // { id: "about", label: "About" },
+    // { id: "gallery", label: "Gallery" },
+    // { id: "education", label: "Education" },
+    // { id: "skills", label: "Skills" },
+    // { id: "projects", label: "Projects" },
+    // { id: "research", label: "Research" },
+    // { id: "certifications", label: "Certifications" },
+    // { id: "experience", label: "Experience" },
+    // { id: "contact", label: "Contact" },
+
+    {
+      id: "hero",
+      label: "Home",
+      timelineTitle: "Problem Framing",
+      timelinedescription:
+        "Introducing my purpose and direction, just like defining a model’s objective.",
+    },
+    {
+      id: "about",
+      label: "About",
+      timelineTitle: "Data Understanding",
+      timelinedescription:
+        "Exploring my background is like understanding the dataset before building.",
+    },
+    {
+      id: "gallery",
+      label: "Gallery",
+      timelineTitle: "Data Exploration",
+      timelinedescription:
+        "Visual highlights of my work reflect patterns, similar to exploratory data analysis.",
+    },
+    {
+      id: "education",
+      label: "Education",
+      timelineTitle: "Pretraining",
+      timelinedescription:
+        "My academic foundation builds core knowledge, like pretraining a model.",
+    },
+    {
+      id: "skills",
+      label: "Skills",
+      timelineTitle: "Model Capabilities",
+      timelinedescription:
+        "Each skill represents a capability, shaping how effectively I can perform tasks.",
+    },
+    {
+      id: "projects",
+      label: "Projects",
+      timelineTitle: "Fine-Tuning",
+      timelinedescription:
+        "Applying and refining knowledge through real-world projects, like training iterations.",
+    },
+    {
+      id: "research",
+      label: "Research",
+      timelineTitle: "Optimization",
+      timelinedescription:
+        "Experimenting and improving approaches, similar to optimizing model performance.",
+    },
+    {
+      id: "certifications",
+      label: "Certifications",
+      timelineTitle: "Evaluation",
+      timelinedescription:
+        "Validating my knowledge through benchmarks, like evaluating a model’s accuracy.",
+    },
+    {
+      id: "experience",
+      label: "Experience",
+      timelineTitle: "Deployment",
+      timelinedescription:
+        "Delivering real-world impact, just like deploying a model into production.",
+    },
+    {
+      id: "contact",
+      label: "Contact",
+      timelineTitle: "Feedback Loop",
+      timelinedescription:
+        "Continuous improvement through interaction, mirroring post-deployment feedback.",
+    },
   ];
 
   return (
@@ -88,7 +159,6 @@ export default function PortfolioPage() {
           fieldStrength={10}
         />
       </div>
-      
       {/* Timeline Sidebar Overlay */}
       <TimelineSidebar
         navItems={navItems}
@@ -96,7 +166,6 @@ export default function PortfolioPage() {
         scrollProgress={scrollProgress}
         onNavigate={scrollToSection}
       />
-      
       <Navigation
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
