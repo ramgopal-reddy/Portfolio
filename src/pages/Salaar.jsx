@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useState } from "react";
+import "../App.css";
 import Image1 from "../assets/1.png";
 import Image2 from "../assets/2.png";
 import Image3 from "../assets/3.png";
@@ -94,7 +95,6 @@ const Salaar = () => {
           ))}
         </nav>
       </header>
-
       {/* Hero Section */}
       <section className="w-full border-b border-white flex flex-col md:flex-row items-center justify-center text-center gap-10 py-32 px-6">
         <div>
@@ -328,6 +328,7 @@ const Salaar = () => {
           ))}
         </div>
       </footer>
+      {/* </Transition> */}
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import "../index.css";
 import { useNavigation } from "./hooks/useNavigation";
 import { useTheme } from "./hooks/useTheme";
+import { useScrollProgress } from "./hooks/useScrollProgress";
 import { Navigation } from "./components/Navigation";
+import { TimelineSidebar } from "./components/TimelineSidebar";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
 import { ProjectsSection } from "./components/ProjectsSection/ProjectsSection";
@@ -21,6 +23,7 @@ export default function PortfolioPage() {
   const { isMenuOpen, setIsMenuOpen, activeSection, scrollToSection } =
     useNavigation();
   const theme = useTheme();
+  const scrollProgress = useScrollProgress();
 
   const navItems = [
     { id: "hero", label: "Home" },
@@ -85,6 +88,15 @@ export default function PortfolioPage() {
           fieldStrength={10}
         />
       </div>
+      
+      {/* Timeline Sidebar Overlay */}
+      <TimelineSidebar
+        navItems={navItems}
+        activeSection={activeSection}
+        scrollProgress={scrollProgress}
+        onNavigate={scrollToSection}
+      />
+      
       <Navigation
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
