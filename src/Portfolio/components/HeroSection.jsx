@@ -100,8 +100,9 @@ export function HeroSection({ scrollToSection }) {
 
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
         <h1
-          className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r transition-all duration-300"
+          className="text-8xl sm:text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r transition-all duration-300"
           style={{
+            fontFamily: "'Dancing Script', cursive",
             backgroundImage: `linear-gradient(to right, ${theme.colors.text}, ${theme.colors.primary}, ${theme.colors.secondary})`,
             transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
           }}
