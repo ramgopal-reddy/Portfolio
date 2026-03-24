@@ -4,7 +4,8 @@ import { DualHighlight } from "@/components/DualHighlight";
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [viewMode, setViewMode] = useState("circular"); // circular, grid, hybrid
+  // const [viewMode, setViewMode] = useState("circular"); // circular, grid, hybrid
+  const [viewMode, setViewMode] = useState("hybrid");
   const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef(null);
   const [scrollDirection, setScrollDirection] = useState(1);
@@ -15,11 +16,13 @@ const GallerySection = () => {
     { id: 1, src: "./Ram.jpg", title: "Profile Photo", category: "personal" },
     { id: 2, src: "./SSMB29.jpg", title: "Professional", category: "personal" },
     { id: 3, src: "./SSMB.jpg", title: "Casual", category: "personal" },
-    { id: 4, src: "./Ram1.jpg", title: "Profile Photo", category: "personal" },
+    { id: 4, src: "./Ram6.jpg", title: "Profile Photo", category: "personal" },
     { id: 5, src: "./Ram2.jpg", title: "Professional", category: "personal" },
     { id: 6, src: "./Ram3.jpg", title: "Casual", category: "personal" },
     { id: 7, src: "./Ram4.jpg", title: "Profile Photo", category: "personal" },
     { id: 8, src: "./Ram5.jpg", title: "Professional", category: "personal" },
+    { id: 9, src: "./lpu1.webp", title: "Campus", category: "Campus" },
+    { id: 10, src: "./lpu2.webp", title: "Campus", category: "Campus" },
     // { id: 4, src: "./SSMBCut.png", title: "Creative", category: "personal" },
     // {
     //   id: 5,
