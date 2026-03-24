@@ -111,6 +111,10 @@ export function AboutSection() {
                 <span>{profileData[0].email}</span>
               </div>
             </div>
+            <p className="mt-4" style={{ color: theme.colors.textSecondary }}>
+              “If my journey were a function, it would look something like
+              this.”
+            </p>
           </div>
         </div>
       </div>

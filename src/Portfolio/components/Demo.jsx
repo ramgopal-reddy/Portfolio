@@ -3,24 +3,30 @@ import { AnimatedCodeBlock } from "../../components/ui/animated-code-block";
 export const Demo = () => {
   const examples = [
     {
-      code: `import { useState, useEffect } from 'react';
+      code: `import time
 
-function useLife() {
-  const [skills, setSkills] = useState(['Coffee', 'Code']);
-  const [loading, setLoading] = useState(true);
+def portfolio_lifecycle():
+    stages = [
+        ("Home", "Problem Framing"),
+        ("About", "Data Understanding"),
+    ]
 
-  useEffect(() => {
-    setTimeout(() => {
-      setSkills(prev => [...prev, 'Debugging', 'AI Magic']);
-      setLoading(false);
-      console.log('✨ Life updated successfully');
-    }, 2000);
-  }, []);
+    print("Initializing...")
 
-  return { skills, loading };
-}
+    time.sleep(2)
 
-export default useLife;
+    stages += [
+        ("Projects", "Fine-Tuning"),
+        ("Experience", "Deployment"),
+        ("Contact", "Feedback Loop"),
+    ]
+
+    print("Lifecycle aligned 🚀")
+    return stages
+
+
+if __name__ == "__main__":
+    portfolio_lifecycle()
 `,
     },
   ];
@@ -30,11 +36,11 @@ export default useLife;
       <AnimatedCodeBlock
         code={examples[0].code}
         theme="dark"
-        title="profile-loading.jsx"
-        typingSpeed={25}
+        title="portfolio.py"
+        typingSpeed={30}
         showLineNumbers={true}
         autoPlay={true}
-        language="typescript"
+        language="python"
         highlightLines={[1, 4, 11]}
         loop={false}
       />
