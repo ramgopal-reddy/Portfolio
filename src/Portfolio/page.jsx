@@ -18,6 +18,7 @@ import { ExperienceSection } from "./components/ExperienceSection";
 import { EducationSection } from "./components/EducationSection";
 import InteractiveHeroSection from "./components/InteractiveHeroSection";
 import GallerySection from "./components/GallerySection";
+import { UsefulAIMLLinks } from "./components/UsefulAIMLlinkes";
 
 export default function PortfolioPage() {
   const { isMenuOpen, setIsMenuOpen, activeSection, scrollToSection } =
@@ -203,6 +204,7 @@ export default function PortfolioPage() {
         />
       </div> */}
       <ContactSection /> {/* 📩 Networking opportunity */}
+      <UsefulAIMLLinks />
       <Footer navItems={navItems} scrollToSection={scrollToSection} />
       {/* <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
