@@ -177,7 +177,7 @@ export function HeroSection({ scrollToSection }) {
               <button>AI/ML Resume</button>
             </a>
           </div>
-          <div
+          {/* <div
             className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
             style={{
               borderColor: theme.colors.primary,
@@ -187,6 +187,18 @@ export function HeroSection({ scrollToSection }) {
           >
             <a href="/RamGopalReddy.pdf" download>
               <button>Download Resume</button>
+            </a>
+          </div> */}
+          <div
+            className="px-8 py-4 border-2 font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            style={{
+              borderColor: theme.colors.primary,
+              color: theme.colors.primary,
+              transition: `all ${theme.transitions.duration.normal} ${theme.transitions.ease}`,
+            }}
+          >
+            <a href="/workflows" target="_blank" rel="noopener noreferrer">
+              <button>Automation Workflows</button>
             </a>
           </div>
           <div
