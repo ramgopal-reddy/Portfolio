@@ -11,7 +11,7 @@ export const educationData = [
       "Studied core computer science subjects including Data Structures, Algorithms, Operating Systems, and Database Management Systems.",
       "Completed coursework in Artificial Intelligence, Machine Learning, and Cloud Computing.",
       "Developed multiple academic projects using Python, JavaScript, C, and Java.",
-      "Contributed to AI and Generative AI projects, focusing on LLM integration and automation tools.",
+      "Contributed to AI and Generative AI projects, focusing on LLM integration & automation tools.",
     ],
   },
   {
